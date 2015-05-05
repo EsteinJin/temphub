@@ -67,6 +67,7 @@ GEM
     mime-types (2.4.3)
     minitest (5.6.1)
     multi_json (1.11.0)
+    non-stupid-digest-assets (1.0.4)
     orm_adapter (0.5.0)
     paperclip (4.2.1)
       activemodel (>= 3.0.0)
@@ -149,6 +150,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  non-stupid-digest-assets
   paperclip
   pg
   rails (= 4.1.8)
