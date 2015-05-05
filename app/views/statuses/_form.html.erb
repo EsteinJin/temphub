@@ -1,4 +1,4 @@
-<%= simple_form_for(@status, html: {class: "form-horizontal"}) do |f| %>
+<%= simple_form_for(@status) do |f| %>
   <% if @status.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@status.errors.count, "error") %> prohibited this status from being saved:</h2>
@@ -12,7 +12,7 @@
   <% end %>
 
     <%= f.input :user_id ,  collection: User.all, label_method: :full_name %><br>
-    <%= f.input :content %>
+    <%= f.input :content, :as => :ckeditor, :input_html => { :uiColor => '#AADC6E', :toolbar => 'mini' } %>
 
   <div class="form-actions">
     <%= f.button :submit %>

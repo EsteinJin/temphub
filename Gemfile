@@ -13,7 +13,8 @@ gem 'pg'
 gem 'rails_12factor'
 end 
 
-
+gem 'paperclip'
+gem 'ckeditor'
 gem 'devise'
 gem 'simple_form'
 # Use SCSS for stylesheets
