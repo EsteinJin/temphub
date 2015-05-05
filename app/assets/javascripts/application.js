@@ -16,5 +16,3 @@
 //= require_tree .
 //= require ckeditor/ckeditor
 //= require_tree ./ckeditor
-//= require ckeditor/override
-//= require ckeditor/init
