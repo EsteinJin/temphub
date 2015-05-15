@@ -1,14 +1,25 @@
 <div class="page-header">
 <h1><%=@user.full_name %></h1>
-
+<%= will_paginate @statuses%>
 </div>
 
 <%if @statuses %>
  <%@statuses.each do |status|%>
 <div class="well">
- <%= status.content%>
+ <%= raw status.content%>
 <hr />
  <%= link_to time_ago_in_words(status.created_at), status_path(status)%> ago 
- </div> 
+
+<p>
+ <strong>Share On:</strong>
+	<%= render_shareable :buttons=> ['twitter', 'facebook', 'linkedin'] %>
+	
+</p>
+
+<p>
+<div class="fb-comments" data-href="https://temphub-steinjin.c9.io/" data-numposts="5" data-colorscheme="dark"></div>
+</p>
+
+  </div> 
 <%end%>
 <%end%>

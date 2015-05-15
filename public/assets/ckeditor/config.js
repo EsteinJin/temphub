@@ -8,6 +8,7 @@ if(typeof(CKEDITOR) != 'undefined')
     [ 'Blockquote' ],
     [ 'Undo', 'Redo' ],
     [ 'insertResolved' ],
+    [ 'Link','Unlink','Anchor' ],    
     [ 'Source' ]
  ];
 }

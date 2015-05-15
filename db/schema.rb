@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505204750) do
+ActiveRecord::Schema.define(version: 20150511152508) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150505204750) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "description"
   end
 
   add_index "statuses", ["user_id"], name: "index_statuses_on_user_id"

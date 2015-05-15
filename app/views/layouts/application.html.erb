@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
+<%= javascript_include_tag "application" %>
 <html>
 <head>
-  <title>Treebook</title>
+  <title>Template Hub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <!--%= javascript_include_tag 'application', 'data-turbolinks-track' => true %-->
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=955568174461440";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div class="navbar navbar-inverse">
 <div class="navbar-inner">
 <div class="container">
- <a href="#" class="brand">Treebook</a>
+ <a href="#" class="brand">Template Hub</a>
  <ul class="nav">
  <li><%= link_to "All Statuses", feed_path %></li>
  </ul>
 
  <ul class="nav pull-right">
  <% if  user_signed_in? %>
+ <li><%= link_to  "About Me", "http://aspspider.info/steinjin/cv/index.html" %></li>
  <li><%= link_to  current_user.full_name, edit_user_registration_path %></li>
   <li><%= link_to  "Log Out", logout_path %></li>
 
 <%else %>
 
+ <ul class="nav pull-right nav-pills">
+
+	 
 <li><%= link_to "Register", register_path %></li>
 <li><%= link_to "Login", login_path %></li>
 <% end %>

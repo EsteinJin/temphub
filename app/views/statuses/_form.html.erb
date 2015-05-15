@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-    <%= f.input :user_id ,  collection: User.all, label_method: :full_name %><br>
+    <%= f.input :description %>
     <%= f.input :content, :as => :ckeditor, :input_html => { :uiColor => '#AADC6E', :toolbar => 'mini' } %>
 
   <div class="form-actions">

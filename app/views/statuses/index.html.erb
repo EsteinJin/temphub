@@ -2,6 +2,8 @@
 <h1>All of Statuses</h1>
 </div>
 
+<%= will_paginate @statuses%>
+
 
 <%= link_to "Post a New Status", new_status_path, class:"btn btn-success"%>
 <% @statuses.each do |status| %>
@@ -9,20 +11,25 @@
 <div class="status ">
  <div class="row">
 <div class="span1">
-	 <%= image_tag status.user.gravatar_url %>
+	<%= link_to image_tag(status.user.gravatar_url), profile_path(status.user.profile_name) %>
 
 </div>
  <div class="span7">
 
 		<strong><%=status.user.full_name%></strong>
-		<p><%=raw status.content%></p>
+		<p><%= status.description%></p>
 		<div class="meta">
 		<%= link_to time_ago_in_words(status.created_at)+ " ago" , status %> |
 		<%= link_to "show", status %>
 		<span class="admin">
+
+		 <% if user_signed_in? %>
+		   <% if status.user_id == current_user.id %>
 		  <%= link_to "Edit" , edit_status_path(status)%> |
 		  <%= link_to "Delete" , status, method: :delete, data:{confirm: "Are you
 		   sure you want to delete?"} %>
+		   <%end%> 
+   	      <%end%>
 
 
 		</span>

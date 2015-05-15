@@ -10,5 +10,17 @@
   <%= raw @status.content %>
 </p>
 
+<p>
+  <strong>Share On:</strong>
+	<%= render_shareable :buttons=> ['twitter', 'facebook', 'linkedin'] %>
+	
+</p>
+
+<% if user_signed_in? %>
+<% if @status.user_id == current_user.id %>
 <%= link_to 'Edit', edit_status_path(@status) %> |
 <%= link_to 'Back', statuses_path %>
+   <%end%> 
+<%end%>
+
+<div class="fb-comments" data-href="https://temphub-steinjin.c9.io/" data-numposts="5" data-width="1000"  data-colorscheme="dark"></div>
